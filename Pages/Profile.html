@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark bg-gradient pb-0">
+        <div class="container">
+            <ul class="nav nav-tabs row">
+                <li class="nav-item me-5 col">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#MyceOffCanvas" aria-controls="MyceOffCanvas" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                </li>
+                <li class="nav-item ms-5 col">
+                    <a class="nav-link disabled text-info">Myce</a>
+                </li>
+                <li class="nav-item col">
+                   <a class="nav-link text-light" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item col">
+                   <a class="nav-link text-light" href="./Market.html">Market</a>
+                </li>
+                <li class="nav-item col">
+                   <a class="nav-link text-light" href="./Communities.html">Communities</a>
+                </li>
+                <li class="nav-item col">
+                   <a class="nav-link text-light" href="./Jobs.html">Jobs</a>
+                </li>
+                <li class="nav-item col">
+                    <a class="nav-link text-light" href="./Workshops.html">Workshops</a>
+                </li>
+                <li class="nav-item col">
+                    <a class="nav-link active" aria-current="page" href="#">Profile</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="MyceOffCanvas" aria-labelledby="MyceOffCanvasLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="MyceHeader">Myce</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <form class="d-flex mb-4" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                <br>
+                <div class="list-group list-group-flush">
+                    <ul class="list-unstyled">
+                        <li>
+                        <a href="About.html" class="list-group-item list-group-item-action">About</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="list-group-item list-group-item-action">Favorites</a>
+                                <ul class="">
+                                    <li>
+                                        <a href="/Pages/IronWolfe-Village.html" class="list-group-item list-group-item-action">IronWolfe Village</a>
+                                    </li>
+                                    <li><i class="bi bi-check"></i>
+                                        <a href="#" class="list-group-item list-group-item-action">Permaculture Forum</a>
+                                    </li>
+                                    <li><i class="bi bi-check"></i>
+                                        <a href="#" class="list-group-item list-group-item-action">Another button item</a>                                        
+                                    </li>
+                                </ul>
+                                
+                        </li>
+                        <li>
+                            <a href="#" class="list-group-item list-group-item-action">Another button item</a>
+                        </li>
+                        <li>
+                            <a href="#" class="list-group-item list-group-item-action">Another button item</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

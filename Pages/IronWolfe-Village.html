@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communities-Ironewolve Village</title>
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark bg-gradient pb-0"> 
+        <div class="container">
+            <ul class="nav nav-tabs row">
+                <li class="nav-item me-2 ms-5 col">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#MyceOffCanvas" aria-controls="MyceOffCanvas" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                </li>
+                <li class="nav-item me-4 ms-4 col">
+                    <img src="../Icons.Pictures/Icons/80px_myce.png" height="35px" alt="Myce">
+ 
+                </li>
+                <li class="nav-item col">
+                  <a class="nav-link text-light" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item col">
+                  <a class="nav-link text-light" href="Market.html">Market</a>
+                </li>
+                <li class="nav-item col">
+                  <a class="nav-link active" href="Communities.html">Communities</a>
+                </li>
+                <li class="nav-item col">
+                  <a class="nav-link text-light" href="Jobs.html">Jobs</a>
+                </li>
+                <li class="nav-item col">
+                    <a class="nav-link text-light" href="Workshops.html">Workshops</a>
+                </li>
+                <li class="dropdown col text-end">
+                    <!-- The text-end isn't working how I want. I've tried different ways to get the Profile information to be Justified to the Right, and stay there, but the spacing
+                        for this header has been a headache.
+                         I really like this drop down menu on the profile, though. 
+                        -->
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle pt-1"  id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="rounded-circle border border-warning me-2" alt="Profile Picture" width="30" height="30" src="../Icons.Pictures/Icons/profile icon light.png">
+                        <span class="d-none d-sm-inline">Jane Doe</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark bg-gradient text-small shadow">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="MyceOffCanvas" aria-labelledby="MyceOffCanvasLabel">
+                <div class="offcanvas-header">
+                    <img src="../Icons.Pictures/Icons/80px_myce dark.png" height="35px" alt="Myce Logo">
+                    <h5 class="offcanvas-title" id="MyceHeader">Myce</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <!-- Just a few list groups, with spaces between. I liked this style the best. I wanted the icons for the 'favorites' to be stars, but 
+                    it was taking up too much time to figure out how to do that. -->
+                    <div class="list-group list-group-flush">
+                        <ul class="list-unstyled">
+                            <li>
+                                <!-- the list-group-item ensures it retains the list-group styling, in this case, flush, and the list group item action 
+                                    ensures that the item reacts to hover -->
+                                <a href="#" class="list-group-item list-group-item-action">Favorites</a>
+                                <ul>
+                                    <li>
+                                        <a href="/Pages/IronWolfe-Village.html" class="list-group-item list-group-item-action">IronWolfe Village</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action">Permaculture Forum</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action">Lessons in Beekeeping</a>                                        
+                                    </li>
+                                </ul>
+                            </li>
+                            <br><br>
+                            <li>  
+                                <a href="#" class="list-group-item list-group-item-action">Recently Visited</a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action">DIY Candlemaking</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action">We Need Pickers!</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action">Autumnal Equinox Celebration!</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <br><br> 
+                            <li>
+                                <a href="#" class="list-group-item list-group-item-action">View My Lists</a>
+                            </li>
+                            <br><br>
+                            <li>
+                                <a href="./Pages/About.html" class="list-group-item list-group-item-action">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <!-- ngl, i cop/pasted from here, and removed the Profile to put it on the top pane. I adjusted, added spacing, coloration, added the search bar. I haven't had time
+            to really explore this one.  -->
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark bg-gradient">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <form class="d-flex mb-4 mt-4" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-light" type="submit">Search</button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-white">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
+                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Item</span> 1 </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Item</span> 2 </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline text-white">Orders</span></a>
+                        </li>
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline text-white">Bootstrap</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Item</span> 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Item</span> 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline text-white">Products</span> </a>
+                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Product</span> 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Product</span> 2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Product</span> 3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline text-white">Product</span> 4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline text-white">Customers</span> </a>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            <div class="col py-3 p-5">
+                <br><br>
+                <h1>
+                  IronWolfe Village
+                </h1>
+            </div>
+
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
