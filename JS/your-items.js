@@ -57,6 +57,9 @@ class ProductService {
         $.ajax(`${endpoint_Products}` + `/${id}`, {
             type: "DELETE",
         });
+        //NOTE: The code below gets the individual row and removes it, that way the page updates when the API call goes out. 
+        let row = document.getElementById(`${id}-row`);
+        row.parentNode.removeChild(row);
     }
 }
 
@@ -73,18 +76,21 @@ class DOMManager {
         $('#productTableBody').empty();
         $.get(endpoint_Products).then(data => {
             data.map(products => {
-                $('#productTableBody').prepend(
-                    $(`
-                    <tr>
+                $("#productTableBody").prepend(
+                  $(`
+                  <!--NOTE: Added Products.id-row to identify the row to remove-->
+                    <tr id="${products.id}-row">
                         <td>
-                            <div class="id">
+                            <div class="id" >
                                 <span><b>${products.id}<b><span>
                             </div>
                         </td>
                         <td>
                             <div class="Name">
                                 <span><b>${products.name}</b></span><br>
-                                <span><small>${products.description}</small></span>
+                                <span><small>${
+                                  products.description
+                                }</small></span>
                             </div>
                         </td>
                         <td>$${products.price}</td>
@@ -93,10 +99,16 @@ class DOMManager {
                         </td>
                         <td>$${products.price * products.qty}</td>
                         <td>
-                            <button class="btn btn-dark text-danger" onclick="DOMManager.deleteProduct(${products.id})">Delete</button>
+                            <button class="btn btn-dark text-danger" onclick="DOMManager.deleteProduct(${
+                              products.id
+                            })">Delete</button>
                         </td>
                         <td>
-                            <button class="btn btn-dark text-primary" data-bs-toggle="collapse" data-bs-target="#collapseUpdate-${products.id}" type="button" aria-expanded="false" aria-controls="collapseUpdate-${products.id}">Edit</button>
+                            <button class="btn btn-dark text-primary" data-bs-toggle="collapse" data-bs-target="#collapseUpdate-${
+                              products.id
+                            }" type="button" aria-expanded="false" aria-controls="collapseUpdate-${
+                    products.id
+                  }">Edit</button>
                         </td>
                     </tr>
                     <tr class="collapse" id="collapseUpdate-${products.id}">
@@ -107,31 +119,49 @@ class DOMManager {
                                 </div>
                             </td>
                             <td>
-                                <label for="updateName-${products.id}" class="form-label">Product Name</label>
-                                <input type="text" style="width: 250px" class="form-control col" id="updateName-${products.id}" placeholder="Words">
+                                <label for="updateName-${
+                                  products.id
+                                }" class="form-label">Product Name</label>
+                                <input type="text" style="width: 250px" class="form-control col" id="updateName-${
+                                  products.id
+                                }" placeholder="Words">
                             </td>
                             <td>
-                                <label for="updatePrice-${products.id}" class="form-label">Price</label>
-                                <input type="number" style="width: 100px" step="0.01" class="form-control col" id="updatePrice-${products.id}" placeholder="$0.00">
+                                <label for="updatePrice-${
+                                  products.id
+                                }" class="form-label">Price</label>
+                                <input type="number" style="width: 100px" step="0.01" class="form-control col" id="updatePrice-${
+                                  products.id
+                                }" placeholder="$0.00">
                             </td>
                             <td>
-                                <label for="updateQuantity-${products.id}" class="form-label">Quantity</label>
-                                <input type="number" style="width: 65px" class="form-control col" id="updateQuantity-${products.id}" placeholder="42">
+                                <label for="updateQuantity-${
+                                  products.id
+                                }" class="form-label">Quantity</label>
+                                <input type="number" style="width: 65px" class="form-control col" id="updateQuantity-${
+                                  products.id
+                                }" placeholder="42">
                             </td>
                             <td>
-                                <label for="updateDescription-${products.id}" class="form-label col">Product Description</label>
-                                <input type="text" class="form-control" colspan="2" id="updateDescription-${products.id}" placeholder="Describe your Product">
+                                <label for="updateDescription-${
+                                  products.id
+                                }" class="form-label col">Product Description</label>
+                                <input type="text" class="form-control" colspan="2" id="updateDescription-${
+                                  products.id
+                                }" placeholder="Describe your Product">
                             </td>
                             <td>
                                 &nbsp;
                             </td>
                             <td>
-                                <button class="btn btn-dark text-primary" id="" onclick="DOMManager.updateProduct('${products.id}})">Done</button>
+                                <button class="btn btn-dark text-primary" id="" onclick="DOMManager.updateProduct('${
+                                  products.id
+                                }})">Done</button>
                             </td>
                         </form>    
                     </tr>
                     `)
-                )
+                );
             })
         })
     }
