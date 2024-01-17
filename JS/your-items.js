@@ -78,7 +78,7 @@ class DOMManager {
             data.map(products => {
                 $("#productTableBody").prepend(
                   $(`
-                  <!--Added Products.id-row to identify the row to remove-->
+                  <!--NOTE: Added Products.id-row to identify the row to remove-->
                     <tr id="${products.id}-row">
                         <td>
                             <div class="id" >
