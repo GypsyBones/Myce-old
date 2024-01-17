@@ -7,20 +7,18 @@
     <link rel="stylesheet" href="../css/site.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark bg-gradient pb-0 "> 
-        <div class="container text-center justify-content-around">
-            <ul class="nav nav-tabs row">
+        <div class="container justify-content-between row">
+            <ul class="nav nav-tabs row text-center">
                 <li class="nav-item col">
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#MyceOffCanvas" aria-controls="MyceOffCanvas" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                 </li>
-                <li class="nav-item col me-auto">
+                <li class="nav-item col">
                     <img src="../Icons.Pictures/Icons/80px_myce.png" height="35px" alt="Myce">
  
                 </li>
@@ -39,11 +37,7 @@
                 <li class="nav-item col">
                     <a class="nav-link text-light" href="Workshops.html">Workshops</a>
                 </li>
-                <li class="dropdown col ms-auto text-end">
-                    <!-- The text-end isn't working how I want. I've tried different ways to get the Profile information to be Justified to the Right, and stay there, but the spacing
-                        for this header has been a headache.
-                         I really like this drop down menu on the profile, though. 
-                        -->
+                <li class="dropdown col me-auto">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle pt-1"  id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img class="rounded-circle  me-2" alt="Profile Picture" width="33" height="33" src="../Icons.Pictures/Icons/icons8-user-default-50.png">
                         <span class="d-none d-sm-inline">Jane Doe</span>
@@ -198,8 +192,7 @@
                 </a><hr>
             </div>
             <div>
-              <div class="collapse" id="addProductForm">
-                <div class="card card-body">
+                <div class="card card-body collapse" id="addProductForm">
                     <form>
                         <div class="mb-3">
                             <label for="productName" class="form-label">Product Name</label>
@@ -211,16 +204,15 @@
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
-                            <input type="text" class="form-control" id="price" placeholder="$0.00">
+                            <input type="number" step="0.01" class="form-control" id="price" placeholder="$0.00">
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Quantity</label>
-                            <input type="text" class="form-control" id="quantity" placeholder="42">
+                            <input type="number" class="form-control" id="quantity" placeholder="42">
                         </div>
-                        <button type="submit" id="add-product" class="btn btn-dark">Add a Product</button>
+                        <button id="${house._id}-addProductBtn" onclick="DOMManager.addProduct('${house._id}')" class="btn btn-dark">Add a Product</button>
                     </form>
                 </div>
-              </div>
             </div><br>
             
             <h4>Currently On Sale</h4><hr>
@@ -231,49 +223,17 @@
                             <table id="product-table" class="table table-dark table-striped">
                                 <thead class="thead-primary">
                                     <tr>
-                                        <th scope="col">&nbsp;</th>
-                                        <th scope="col">Product</th>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Product Name</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Quantity</th>
-                                        <th scope="col">Total</th>
+                                        <th scope="col">Projected Total</th>
                                         <th scope="col">Delete</th>
+                                        <th scope="col">Edit</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="img"></div>
-                                        </td>
-                                        <td>
-                                            <div class="text">
-                                                <span><b>Percolater </b></span><br>
-                                                <span><small>Barely Used</small></span>
-                                            </div>
-                                        </td>
-                                        <td>$15.00</td>
-                                        <td class="quantity">2</td>
-                                        <td>$30.00</td>
-                                        <td>
-                                            <button id="delete-btn" class="btn btn-dark text-danger">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="img"></div>
-                                        </td>
-                                        <td>
-                                            <div class="Name">
-                                                <span><b>Oil Distillery</b></span><br>
-                                                <span><small>Brand New, S...</small></span>
-                                            </div>
-                                        </td>
-                                        <td>$180.00</td>
-                                        <td class="quantity">1</td>
-                                        <td class="Total">$180.00</td>
-                                        <td>
-                                            <button id="delete-btn" class="btn btn-dark text-danger">Delete</button>
-                                        </td>
-                                    </tr>
+                                <tbody id="productTableBody">
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -283,7 +243,8 @@
          </div>
 
         
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>            
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>     
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>       
     <script src="../JS/your-items.js"></script>
 </body>
 </html>
